@@ -29,9 +29,9 @@ kotlin {
     }
     js {
         browser {
-            testTask {
+            testTask(Action {
                 enabled = false
-            }
+            })
         }
         binaries.executable()
     }

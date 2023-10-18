@@ -26,9 +26,9 @@ kotlin {
     iosSimulatorArm64()
     js {
         browser {
-            testTask {
+            testTask(Action {
                 enabled = false
-            }
+            })
         }
     }
     macosX64()
@@ -51,7 +51,7 @@ kotlin {
         }
         val commonTest by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
                 implementation(kotlin("test"))
             }
         }
@@ -148,7 +148,6 @@ android {
     dependencies {
         //Android integration tests
         testImplementation("androidx.test:core:1.5.0")
-        testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
         androidTestImplementation("androidx.compose.ui:ui-test-manifest:1.5.3")
         androidTestImplementation("androidx.compose.ui:ui-test:1.5.3")
         androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.5.3")
